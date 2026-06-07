@@ -1,3 +1,12 @@
+---
+title: Diet Planning Assistant with History
+emoji: 🥗
+colorFrom: green
+colorTo: blue
+sdk: gradio
+app_file: app.py
+pinned: false
+---
 # Diet Planning Assistant with History
 
 A Gradio-based AI diet planning assistant that generates personalised nutrition guidance through a conversational interface. The application maintains persistent conversation history, allowing users to create, revisit, and continue previous diet-planning sessions.
