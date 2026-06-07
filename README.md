@@ -1,91 +1,119 @@
-# Diet Planning Chatbot
+# Diet Planning Assistant with History
 
-A Gradio-based diet planning assistant that creates personalised meal plans through a streaming chat interface. The chatbot uses LangChain, stores conversation history in SQLite, and loads its system instructions from `prompt.md`.
+A Gradio-based AI diet planning assistant that generates personalised nutrition guidance through a conversational interface. The application maintains persistent conversation history, allowing users to create, revisit, and continue previous diet-planning sessions.
+
+## Overview
+
+The Diet Planning Assistant helps users explore dietary strategies, meal planning, nutrition goals, and lifestyle improvements through an interactive chatbot interface. Conversations are automatically saved and can be reloaded from previous sessions.
+
+The application combines:
+
+* Gradio for the web interface
+* LangChain for conversation management
+* Large Language Models (LLMs) for diet guidance
+* Persistent chat history storage
+* Session-based conversation management
 
 ## Features
 
-- Streaming chatbot responses
-- Gradio web interface
-- Persistent conversation history using SQLite
-- Session selection for previous conversations
-- Diet-planning system prompt with safety and nutritional guidance
-- Environment-variable based API key management
+* Interactive AI-powered diet planning assistant
+* Streaming chatbot responses
+* Persistent conversation history
+* Previous conversation retrieval
+* Multiple chat sessions
+* User-friendly Gradio interface
+* Structured diet and nutrition guidance
+* Environment-variable based API key management
 
 ## Project Structure
 
 ```text
 .
-├── main.py              # Application entry point
-├── logic.py             # Chatbot logic, model setup, session history
-├── ui.py                # Gradio interface
-├── prompt.md            # System prompt for the diet assistant
-├── requirements.txt     # Python dependencies
-├── .env.example         # Example environment variable file
-├── .gitignore           # Files Git should ignore
-└── README.md            # Project documentation
+├── app.py              # Application entry point
+├── logic.py            # Chatbot logic and session management
+├── ui.py               # Gradio user interface
+├── prompt.md           # System prompt and behavioural instructions
+├── requirements.txt    # Project dependencies
+├── .gitignore          # Ignored files and folders
+└── README.md           # Project documentation
 ```
 
-## Setup
+## Installation
 
-### 1. Clone the repository
+### Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-repository-folder>
+git clone https://github.com/finpy1789/diet-chatbot-with-history.git
+cd diet-chatbot-with-history
 ```
 
-### 2. Create a virtual environment
+### Create a virtual environment
+
+Mac/Linux:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-On Windows:
+Windows:
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Create your local `.env` file
+### Configure API Key
 
-Copy the example file:
-
-```bash
-cp .env.example .env
-```
-
-Then edit `.env` and add your real API key:
+Create a local `.env` file:
 
 ```env
-OPENAI_API_KEY=your_real_api_key_here
+OPENAI_API_KEY=your_api_key_here
 ```
 
-Do **not** upload your real `.env` file to GitHub. The `.gitignore` file already excludes it.
+Never commit your `.env` file to GitHub.
 
-## Run the app
+## Running the Application
 
 ```bash
-python main.py
+python app.py
 ```
 
-Gradio will start a local web app and provide a browser link.
+The Gradio interface will launch locally and provide a browser URL for access.
 
-## Notes on API Keys
+## Example Use Cases
 
-This project uses `python-dotenv` to load environment variables from `.env`. Your actual API key should only live on your local machine or in deployment secrets, such as Hugging Face Spaces Secrets, GitHub Actions Secrets, or another secure environment variable manager.
+* Weight-loss meal planning
+* Muscle-gain nutrition strategies
+* High-protein diet planning
+* Lifestyle-based nutrition recommendations
+* Sustainable dietary habit improvement
+* Healthy meal structure design
 
-## Deployment Notes
+## Deployment
 
-For Hugging Face Spaces or similar platforms, do not upload `.env`. Instead, add `OPENAI_API_KEY` through the platform's secret/environment variable settings.
+This application can be deployed on:
 
-## Important Health Disclaimer
+* Hugging Face Spaces
+* Render
+* Railway
+* Local Servers
+* Docker-based environments
 
-This chatbot provides general diet-planning guidance only. It should not replace advice from a doctor, registered dietitian, or qualified healthcare professional, especially for users with medical conditions, eating disorders, pregnancy, allergies, or specialist nutritional requirements.
+For cloud deployment, store API keys using environment variables or platform secrets rather than uploading a `.env` file.
+
+## Disclaimer
+
+This project is intended for educational and informational purposes only. The recommendations generated by the chatbot should not be considered medical advice. Users with medical conditions, allergies, eating disorders, or specialised nutritional requirements should consult a qualified healthcare professional before making significant dietary changes.
+
+## Author
+
+Syed Hoque
+
+GitHub: https://github.com/finpy1789S
